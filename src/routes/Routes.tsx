@@ -8,7 +8,7 @@ import MarkdownPage from "../components/MarkdownPage";
 
 export const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/taste-without-trouble",
     element: <App />,
     children: [
       { path: "", element: <Home /> },
