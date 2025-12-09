@@ -1,5 +1,5 @@
-import { Box } from "@mui/material";
-import { Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
+// import { Typography } from "@mui/material";
 
 /**
  *
@@ -7,10 +7,15 @@ import { Typography } from "@mui/material";
  */
 function AboutUsPage() {
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <Typography variant="h5">My name is Melanie Reisner-Earl</Typography>
+    <Box
+      textAlign="left"
+      sx={{ display: "grid", gridAutoColumns: "1fr", gap: 1 }}>
+      <Typography variant="h4" textAlign="center">
+        My name is Melanie Reisner-Earl
+      </Typography>
+
       <Typography>
-        "I'm a biology student based in Pleasanton, CA, with a deep passion for
+        I'm a biology student based in Pleasanton, CA, with a deep passion for
         the gut mind connection and gastrointestinal disorders. I began this
         mission in 2025 to spread awareness about GI conditions and how they
         impact both physical and mental health. As a child, I struggled with
@@ -22,7 +27,6 @@ function AboutUsPage() {
         foods like eggs and dairy. I knew something more was going on, but I
         didn't have the answers.
       </Typography>
-
       <Typography>
         In 2023, my life took a frightening turn. A mass of food became lodged
         in my throat, tearing my esophagus. I nearly lost my life as my airway
@@ -38,7 +42,6 @@ function AboutUsPage() {
         what the Stanford doctor had said, and I knew I needed to get an
         endoscopy—there had to be more to the story than just “IBS.”
       </Typography>
-
       <Typography>
         My doctor was reluctant and continued insisting that my symptoms were
         nothing serious, but I kept advocating for myself. Eventually, I got the
@@ -55,7 +58,6 @@ function AboutUsPage() {
         difficult. The restrictions made eating isolating and frustrating—I
         couldn't enjoy the foods I grew up loving.
       </Typography>
-
       <Typography>
         Over time, I realized many people with GI disorders face similar
         struggles. The overlap between gut conditions and eating disorders is
@@ -66,7 +68,7 @@ function AboutUsPage() {
         disorders among young people and how easily they can evolve into
         disordered eating. Through sharing my story, I hope to inspire others to
         take their gut health seriously, to advocate for themselves, and to
-        remember that healing—both physical and emotional—is possible."
+        remember that healing—both physical and emotional—is possible.
       </Typography>
     </Box>
   );
