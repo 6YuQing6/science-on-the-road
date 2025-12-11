@@ -7,7 +7,7 @@ function MarkdownPage() {
   const [markdownContent, setMarkdownContent] = useState("");
 
   useEffect(() => {
-    fetch(`/text/${filename}.md`)
+    fetch(`./text/${filename}.md`)
       .then((response) => response.text())
       .then((text) => setMarkdownContent(text));
   }, [filename]);

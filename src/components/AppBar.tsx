@@ -8,6 +8,7 @@ import FlatwareIcon from "@mui/icons-material/Flatware";
 import { Box } from "@mui/material";
 import { Button } from "@mui/material";
 import { styled } from "@mui/material";
+// import { Link } from "react-router-dom";
 
 export default function ResponsiveAppBar() {
   const handleCloseNavMenu = () => {
@@ -25,15 +26,18 @@ export default function ResponsiveAppBar() {
         justifyContent: { xs: "center", sm: "flex-start" },
       }}>
       {pagesText.map((page, index) => (
+        // <>
         <Button
           variant="text"
           color="inherit"
           key={page}
-          href={pagesLink[index]}
+          href={`#/${pagesLink[index]}`}
           onClick={handleCloseNavMenu}
           sx={{ display: "block" }}>
           {page}
         </Button>
+        // <Link to={pagesLink[index]} key={`link-${page}`} />
+        // </>
       ))}
     </Box>
   );
