@@ -48,7 +48,7 @@ export default function ResponsiveAppBar() {
     <React.Fragment>
       <AppBar position="fixed">
         <Toolbar>
-          <Button variant="text" color="inherit" href="/">
+          <Button variant="text" color="inherit" href="/taste-without-trouble/">
             <FlatwareIcon
               sx={{
                 marginRight: "0.3rem",
