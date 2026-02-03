@@ -2,12 +2,12 @@ import type {} from "@mui/lab/themeAugmentation";
 import { createTheme } from "@mui/material";
 
 const color = {
-  DARKSPRUCE: "#004b23",
-  SEAGREEN: "#2B9348",
-  GREEN: "#006400",
+  DARKSPRUCE: "#265a41",
+  SEAGREEN: "#549a68",
+  GREEN: "#55784c",
   BRIGHTFERN: "#38b000",
-  BRIGHTLEMON: "#aacc00",
-  YELLOW: "#E7F9A9",
+  BRIGHTLEMON: "#e8edaf",
+  YELLOW: "rgb(252, 255, 243)",
   COFFEE: "#230C0F",
 };
 
@@ -24,7 +24,7 @@ export const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: "Lato",
+    fontFamily: "SN Pro",
     fontWeightRegular: 500,
     fontWeightMedium: 600,
   },
@@ -83,7 +83,7 @@ export const cardTheme = createTheme(
       MuiCardContent: {
         styleOverrides: {
           root: {
-            fontFamily: ["sans-serif", "Amazon Ember"],
+            fontFamily: ["SN Pro"],
             padding: "0px",
             "&:last-child": {
               paddingBottom: "0px",
@@ -96,7 +96,7 @@ export const cardTheme = createTheme(
           {
             props: { component: "h1" },
             style: {
-              fontFamily: ["sans-serif", "Amazon Ember"],
+              fontFamily: ["SN Pro"],
               fontSize: 28,
               fontWeight: 400,
               lineHeight: 1.2,
@@ -107,5 +107,5 @@ export const cardTheme = createTheme(
       },
     },
   },
-  theme
+  theme,
 );

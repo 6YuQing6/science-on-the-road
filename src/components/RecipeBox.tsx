@@ -15,11 +15,16 @@ function RecipeBox({ image, title, link, author }: RecipeProps) {
     <ImageListItem key={image}>
       <Link to={link}>
         <img
-          srcSet={`${image}?w=248&fit=crop&auto=format&dpr=2 2x`}
-          src={`${image}?w=248&fit=crop&auto=format`}
+          srcSet={`${image}`}
+          src={`${image}`}
           alt={title}
           loading="lazy"
-          style={{ maxWidth: "100%", height: "auto" }}
+          style={{
+            width: "auto",
+            maxWidth: "100%",
+            height: "auto",
+            maxHeight: "100%",
+          }}
         />
         <ImageListItemBar
           title={title}
@@ -28,14 +33,6 @@ function RecipeBox({ image, title, link, author }: RecipeProps) {
         />
       </Link>
     </ImageListItem>
-
-    // <Box>
-    //   <CustomCard>
-
-    //     <Link to={link}> </Link>
-    //   </CustomCard>
-
-    // </Box>
   );
 }
 

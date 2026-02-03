@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
+import CustomImage from "./CustomImage";
 // https://medium.com/@dimterion/react-markdown-examples-372fa1b21c0c
 function MarkdownPage() {
   const { filename } = useParams();
   const [markdownContent, setMarkdownContent] = useState("");
+
+  console.log(filename);
 
   useEffect(() => {
     fetch(`./text/${filename}.md`)
@@ -12,7 +15,14 @@ function MarkdownPage() {
       .then((text) => setMarkdownContent(text));
   }, [filename]);
 
-  return <ReactMarkdown>{markdownContent}</ReactMarkdown>;
+  return (
+    <ReactMarkdown
+      components={{
+        img: CustomImage,
+      }}>
+      {markdownContent}
+    </ReactMarkdown>
+  );
 }
 
 export default MarkdownPage;

@@ -21,23 +21,52 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isSigningIn, setIsSigningIn] = useState(false);
-  const [errorMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
+  function getFirebaseErrorMessage(error: any): string {
+    switch (error?.code) {
+      case "auth/invalid-credential":
+        return "Incorrect email or password.";
+      case "auth/user-not-found":
+        return "No account found with this email.";
+      case "auth/wrong-password":
+        return "Incorrect password.";
+      case "auth/too-many-requests":
+        return "Too many attempts. Try again later.";
+      default:
+        return "Something went wrong. Please try again.";
+    }
+  }
   const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!isSigningIn) {
-      setIsSigningIn(true);
+    e.preventDefault();
+    if (isSigningIn) return;
+
+    setIsSigningIn(true);
+    setErrorMessage("");
+
+    try {
       await doSignInWithEmailAndPassword(email, password);
+    } catch (err: any) {
+      setErrorMessage(getFirebaseErrorMessage(err));
+    } finally {
+      setIsSigningIn(false);
     }
   };
 
-  const onGoogleSignIn = (e: MouseEvent<HTMLButtonElement>) => {
+  const onGoogleSignIn = async (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    if (!isSigningIn) {
-      setIsSigningIn(true);
-      doSignInWithGoogle().catch(() => {
-        setIsSigningIn(false);
-      });
+    if (isSigningIn) return;
+
+    setIsSigningIn(true);
+    setErrorMessage("");
+
+    try {
+      await doSignInWithGoogle();
+    } catch (err: any) {
+      setErrorMessage(getFirebaseErrorMessage(err));
+    } finally {
+      setIsSigningIn(false);
     }
   };
 

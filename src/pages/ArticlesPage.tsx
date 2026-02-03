@@ -5,14 +5,14 @@ import { Box, ImageList } from "@mui/material";
 import { Outlet } from "react-router-dom";
 // import { Grid } from "@mui/material";
 import RecipeBox from "../components/RecipeBox";
-import { getRecipes } from "../recipes/recipes";
+import { getArticles } from "../recipes/recipes";
 // import { theme } from "../components/theme";
 /**
  *
  * @return {div} home element
  */
-function RecipesPage() {
-  const recipeList = getRecipes();
+function ArticlesPage() {
+  const articlesList = getArticles();
   return (
     <Box
       sx={{
@@ -22,7 +22,7 @@ function RecipesPage() {
         textAlign: "left",
         alignContent: "flex-start",
       }}>
-      <h1>Recipes</h1>
+      <h1>Articles</h1>
       <ImageList
         sx={{
           gridTemplateColumns: {
@@ -31,13 +31,13 @@ function RecipesPage() {
             md: "repeat(3, 1fr) !important", // 3 columns on desktop
           },
         }}>
-        {recipeList.map((recipe) => (
+        {articlesList.map((article) => (
           <RecipeBox
-            key={recipe.link}
-            title={recipe.title}
-            author={recipe.author}
-            link={recipe.link}
-            image={recipe.image}
+            key={article.link}
+            title={article.title}
+            author={article.author}
+            link={article.link}
+            image={article.image}
           />
         ))}
       </ImageList>
@@ -47,4 +47,4 @@ function RecipesPage() {
   );
 }
 
-export default RecipesPage;
+export default ArticlesPage;

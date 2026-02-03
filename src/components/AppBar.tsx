@@ -65,6 +65,16 @@ export default function ResponsiveAppBar() {
             <Button
               variant="text"
               color="inherit"
+              key={"recipes"}
+              href={`#/articles`}
+              onClick={handleCloseNavMenu}
+              sx={{ display: "block" }}>
+              {"Articles"}
+            </Button>
+
+            <Button
+              variant="text"
+              color="inherit"
               key={"about"}
               href={`#/about`}
               onClick={handleCloseNavMenu}
