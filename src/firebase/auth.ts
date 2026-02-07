@@ -11,14 +11,14 @@ import {
 
 export const doCreateUserWithEmailAndPassword = async (
   email: string,
-  password: string
+  password: string,
 ) => {
   return createUserWithEmailAndPassword(auth, email, password);
 };
 
 export const doSignInWithEmailAndPassword = (
   email: string,
-  password: string
+  password: string,
 ) => {
   return signInWithEmailAndPassword(auth, email, password);
 };
@@ -30,7 +30,6 @@ export const doSignInWithGoogle = async () => {
 
 export const doSignOut = () => {
   localStorage.removeItem("user");
-  console.log("Logging Out");
   return auth.signOut();
 };
 

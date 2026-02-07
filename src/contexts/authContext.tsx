@@ -31,17 +31,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     getRedirectResult(auth).catch(console.error);
     const unsubscribe = onAuthStateChanged(auth, (user: User | null) => {
-      if (user) {
-        console.log("Logged in user:", {
-          uid: user.uid,
-          email: user.email,
-          displayName: user.displayName,
-          photoURL: user.photoURL,
-          providerId: user.providerData[0]?.providerId,
-        });
-      } else {
-        console.log("User signed out");
-      }
       initializeUser(user);
     });
 

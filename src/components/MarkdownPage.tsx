@@ -26,11 +26,7 @@ function MarkdownPage() {
           img: CustomImage,
           em({ children }) {
             const text = Array.isArray(children) ? children[0] : children;
-            console.log(text);
-            console.log(ingredients[text]);
-
             if (typeof text === "string" && ingredients[text]) {
-              console.log("replaced with popover");
               return (
                 <IngredientPopover
                   name={text}
@@ -38,7 +34,6 @@ function MarkdownPage() {
                 />
               );
             }
-            console.log("replaced with italics");
             return <em>{children}</em>;
           },
         }}>
