@@ -25,6 +25,14 @@
   --color-accent: hsl(51, 80%, 80%);
 }
 
+a {
+  color: var(--color-tertiary);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--color-accent);
+}
+
 h1 {
   font-size: 2.027rem;
 }
@@ -48,6 +56,11 @@ p {
 }
 small {
   font-size: 0.889rem;
+}
+
+.popover-link {
+  color: var(--color-tertiary);
+  cursor: pointer;
 }
 
 .markdown > p:has(> img):not(:has(> :not(img))) {

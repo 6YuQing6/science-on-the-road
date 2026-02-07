@@ -79,7 +79,7 @@ export default function ResponsiveAppBar() {
               href={`#/about`}
               onClick={handleCloseNavMenu}
               sx={{ display: "block" }}>
-              {"About Us"}
+              {"About"}
             </Button>
 
             {!userLoggedIn && (

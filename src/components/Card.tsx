@@ -18,6 +18,7 @@ const CustomCard = ({
         <Card
           style={{
             borderRadius: type === "pointy" ? "1px" : "8px",
+            padding: "1rem",
           }}
           variant="outlined"
           {...rest}>

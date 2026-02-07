@@ -7,6 +7,7 @@ import MarkdownPage from "../components/MarkdownPage";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
 import ArticlesPage from "../pages/ArticlesPage";
+import IngredientsPage from "../pages/IngredientsPage";
 // import MarkdownComponent from "../components/MarkdownComponent";
 
 // https://stackoverflow.com/questions/71984401/react-router-not-working-with-github-pages
@@ -21,6 +22,7 @@ export const router = createHashRouter([
       { path: "articles", element: <ArticlesPage /> },
       { path: "articles/:filename", element: <MarkdownPage /> },
       { path: "about", element: <AboutUsPage /> },
+      { path: "ingredients", element: <IngredientsPage /> },
       { path: "register", element: <Register /> },
       { path: "login", element: <Login /> },
     ],

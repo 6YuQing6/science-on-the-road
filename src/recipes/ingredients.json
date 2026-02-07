@@ -1,0 +1,30 @@
+{
+  "tumeric": {
+    "description": [
+      "Amazing antioxidant benefits that help lower protein levels and reduce side effects or the risk of cancers such as bowel, prostate, and ovarian cancer.",
+      "Excellent pain reliever for osteoarthritis, joint diseases, and those with painful sores on the inner mouth.",
+      "Adding turmeric to fatty foods or those high in oil can actually help the body absorb those foods and promote regular bowel movements because it is part of the ginger family.",
+      "Curcumin, a compound found in turmeric, has been found to alleviate symptoms of Crohn's disease and Irritable bowel disease.",
+      "Amazing for your skin health, helping to even skin tone and decrease the effects of rosacea."
+    ],
+    "summarized_description": "A powerful antioxidant-rich spice from the ginger family that supports digestion, joint and pain relief, gut and skin health, and may help reduce inflammation and disease-related risks through its active compound curcumin."
+  },
+
+  "ginger": {
+    "description": [
+      "Studies show that ginger may play a huge role in allergy relief for asthmatic individuals and those with skin allergies, significantly reducing pruritus by reducing C-reactive protein levels.",
+      "Helps manage healthy blood sugar levels and relieve symptoms associated with hypertension.",
+      "Ginger is effective in relieving nausea and is safe for pregnant women to consume for morning sickness.",
+      "Ginger can increase your health span and reduce the risks of illness to support a healthy aging process.",
+      "Helps manage symptoms of IBS and can alleviate abdominal pain, swelling, and nausea during gastrointestinal infections."
+    ],
+    "summarized_description": "A versatile root known for reducing inflammation, easing nausea, supporting blood sugar and blood pressure balance, relieving allergy and IBS symptoms, and promoting overall healthy aging."
+  },
+
+  "fennel seed": {
+    "description": [
+      "Fennel seeds can relieve antispasmodic effects that come with periods, perimenopause and menopause."
+    ],
+    "summarized_description": "A natural antispasmodic that helps ease menstrual discomfort and supports hormonal transitions during perimenopause and menopause."
+  }
+}

@@ -12,27 +12,34 @@ interface RecipeProps extends ImageListItemProps {
 
 function RecipeBox({ image, title, link, author }: RecipeProps) {
   return (
-    <ImageListItem key={image}>
-      <Link to={link}>
+    <Link to={link}>
+      <ImageListItem
+        key={image}
+        sx={{
+          width: "100%",
+          aspectRatio: "1 / 1", // square (use 16 / 9 if you want)
+          overflow: "hidden",
+        }}>
         <img
           srcSet={`${image}`}
           src={`${image}`}
           alt={title}
           loading="lazy"
           style={{
-            width: "auto",
-            maxWidth: "100%",
-            height: "auto",
-            maxHeight: "100%",
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            display: "block",
+            borderRadius: "8px",
           }}
         />
-        <ImageListItemBar
-          title={title}
-          subtitle={<span>by: {author}</span>}
-          position="below"
-        />
-      </Link>
-    </ImageListItem>
+      </ImageListItem>
+      <ImageListItemBar
+        title={title}
+        subtitle={<span>by: {author}</span>}
+        position="below"
+      />
+    </Link>
   );
 }
 

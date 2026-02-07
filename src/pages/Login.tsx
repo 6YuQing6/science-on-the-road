@@ -5,7 +5,6 @@ import {
   Button,
   Container,
   Divider,
-  Paper,
   TextField,
   Typography,
 } from "@mui/material";
@@ -14,6 +13,7 @@ import {
   doSignInWithEmailAndPassword,
   doSignInWithGoogle,
 } from "../firebase/auth";
+import CustomCard from "../components/Card";
 
 export default function Login() {
   const { userLoggedIn } = useAuth();
@@ -82,7 +82,7 @@ export default function Login() {
         display: "flex",
         alignItems: "center",
       }}>
-      <Paper elevation={6} sx={{ p: 4, width: "100%" }}>
+      <CustomCard elevation={6} sx={{ p: 4, width: "100%" }}>
         <Typography
           variant="h5"
           fontWeight={600}
@@ -163,7 +163,7 @@ export default function Login() {
           }>
           {isSigningIn ? "Signing In..." : "Continue with Google"}
         </Button>
-      </Paper>
+      </CustomCard>
     </Container>
   );
 }

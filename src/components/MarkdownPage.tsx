@@ -2,12 +2,13 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
 import CustomImage from "./CustomImage";
+import { IngredientPopover } from "./Ingredient";
+import { getIngredients } from "../recipes/recipes";
+
 // https://medium.com/@dimterion/react-markdown-examples-372fa1b21c0c
 function MarkdownPage() {
   const { filename } = useParams();
   const [markdownContent, setMarkdownContent] = useState("");
-
-  console.log(filename);
 
   useEffect(() => {
     fetch(`./text/${filename}.md`)
@@ -15,11 +16,31 @@ function MarkdownPage() {
       .then((text) => setMarkdownContent(text));
   }, [filename]);
 
+  // if markdown text matches ingredient in ingredients, replace text with IngredientPopover(ingredient, ingredient.summary)
+  const ingredients = getIngredients();
+
   return (
     <div className="markdown">
       <ReactMarkdown
         components={{
           img: CustomImage,
+          em({ children }) {
+            const text = Array.isArray(children) ? children[0] : children;
+            console.log(text);
+            console.log(ingredients[text]);
+
+            if (typeof text === "string" && ingredients[text]) {
+              console.log("replaced with popover");
+              return (
+                <IngredientPopover
+                  name={text}
+                  summary={ingredients[text].summarized_description}
+                />
+              );
+            }
+            console.log("replaced with italics");
+            return <em>{children}</em>;
+          },
         }}>
         {markdownContent}
       </ReactMarkdown>
