@@ -8,7 +8,7 @@ import CustomCard from "../components/Card";
 function Home() {
   return (
     <Box sx={{ flexGrow: 1, textAlign: "left" }}>
-      <CustomCard sx={{ marginTop: "2rem" }}>
+      <CustomCard sx={{ marginTop: "2rem", padding: "1rem" }}>
         <h1>Our Objective</h1>
         <p>
           Taste Without Trouble aims to craft allergen-free treats specifically
