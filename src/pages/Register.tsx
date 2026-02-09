@@ -1,15 +1,9 @@
 import { useState } from "react";
 import { Link, Navigate } from "react-router-dom";
-import {
-  Box,
-  TextField,
-  Button,
-  Typography,
-  Paper,
-  Container,
-} from "@mui/material";
+import { Box, TextField, Button, Typography, Container } from "@mui/material";
 import { useAuth } from "../contexts/authContext";
 import { doCreateUserWithEmailAndPassword } from "../firebase/auth";
+import CustomCard from "../components/Card";
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -43,15 +37,7 @@ const Register = () => {
           alignItems: "center",
           justifyContent: "center",
         }}>
-        <Paper
-          elevation={3}
-          sx={{
-            padding: 4,
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            width: "100%",
-          }}>
+        <CustomCard elevation={6} sx={{ padding: "1rem", width: "100%" }}>
           <Box sx={{ marginBottom: 3, textAlign: "center" }}>
             <Typography component="h1" variant="h5" fontWeight="600">
               Create a New Account
@@ -129,7 +115,7 @@ const Register = () => {
               </Typography>
             </Box>
           </Box>
-        </Paper>
+        </CustomCard>
       </Container>
     </>
   );
